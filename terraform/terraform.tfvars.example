@@ -1,0 +1,8 @@
+aws_region   = "ap-south-1"
+cluster_name = "invigrid-eks"
+
+# --- Optional: AWS IAM Identity Center (SSO) Role ARNs ---
+# Find via: aws iam list-roles --query "Roles[?starts_with(RoleName, 'AWSReservedSSO_')].[RoleName,Arn]" --output table
+# sso_admin_role_arn     = "arn:aws:iam::123456789012:role/aws-reserved/sso.amazonaws.com/ap-south-1/AWSReservedSSO_EKS-Admin_1234567890abcdef"
+# sso_readonly_role_arn  = "arn:aws:iam::123456789012:role/aws-reserved/sso.amazonaws.com/ap-south-1/AWSReservedSSO_EKS-ReadOnly_1234567890abcdef"
+# sso_developer_role_arn = "arn:aws:iam::123456789012:role/aws-reserved/sso.amazonaws.com/ap-south-1/AWSReservedSSO_EKS-Developer_1234567890abcdef"

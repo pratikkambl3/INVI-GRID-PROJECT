@@ -1,0 +1,72 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dev-sample-app
+  namespace: dev
+  labels:
+    app: dev-sample-app
+    env: dev
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: dev-sample-app
+  template:
+    metadata:
+      labels:
+        app: dev-sample-app
+    spec:
+      containers:
+        - name: nginx
+          image: public.ecr.aws/nginx/nginx:alpine
+          ports:
+            - containerPort: 80
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: qa-test-app
+  namespace: qa
+  labels:
+    app: qa-test-app
+    env: qa
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: qa-test-app
+  template:
+    metadata:
+      labels:
+        app: qa-test-app
+    spec:
+      containers:
+        - name: nginx
+          image: public.ecr.aws/nginx/nginx:alpine
+          ports:
+            - containerPort: 80
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: prod-secure-app
+  namespace: production
+  labels:
+    app: prod-secure-app
+    env: production
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: prod-secure-app
+  template:
+    metadata:
+      labels:
+        app: prod-secure-app
+    spec:
+      containers:
+        - name: nginx
+          image: public.ecr.aws/nginx/nginx:alpine
+          ports:
+            - containerPort: 80
+
