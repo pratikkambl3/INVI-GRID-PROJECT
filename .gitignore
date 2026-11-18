@@ -12,7 +12,8 @@ override.tf.json
 *_override.tf.json
 .terraformrc
 terraform.rc
-
+*.pem
+*.pub
 # OS & Editor files
 .DS_Store
 Thumbs.db
